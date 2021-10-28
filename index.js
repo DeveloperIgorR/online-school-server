@@ -24,4 +24,32 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
-app.listen(PORT,() => console.log('RERVER STARTED'))
+app.use(bodyParser.json())
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET,HEAD,OPTIONS,POST,PUT,DELETE,PATCH"
+    );
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    next();
+  });
+app.use('/api',routes)
+
+async function startApp(){
+    try {
+        await mongoose.connect(DB_URL, {useUnifiedTopology: true, useNewUrlParser:true})
+        app.listen(port, () => console.log('SERWER STARTED'))
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
+
+startApp()
+
+module.exports = app
