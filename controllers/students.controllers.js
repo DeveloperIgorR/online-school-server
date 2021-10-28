@@ -3,8 +3,8 @@ const StudentsService = require("../services/students.services")
 class StudentsController{
     async create(req,res) {
         try {            
-            const tasks = await StudentsService.create(req.body)
-            return res.json(tasks)            
+            const student = await StudentsService.create(req.body)
+            return res.json(student)            
         }
         catch (e) {
             res.status(500).json(e.message)        
@@ -12,8 +12,8 @@ class StudentsController{
     }
     async getAll(req,res) {
         try {           
-            const tasks = await StudentsService.getAll()
-            return res.json(tasks)            
+            const students = await StudentsService.getAll()
+            return res.json(students)            
         }
         catch (e) {
             res.status(500).json(e.message)        
@@ -21,8 +21,8 @@ class StudentsController{
     }
     async getOne(req,res) {
         try {           
-            const tasks = await StudentsService.getOne(req.params.id)
-            return res.json(tasks)            
+            const student = await StudentsService.getOne(req.params.id)
+            return res.json(student)            
         }
         catch (e) {
             res.status(500).json(e.message)        
@@ -30,11 +30,11 @@ class StudentsController{
     }
     async update(req,res) {
         try {           
-            const updatedTask = await StudentsService.update(
+            const updatedStudent = await StudentsService.update(
                 req.params.id,
                 req.body
                 )
-            return res.json(updatedTask)            
+            return res.json(updatedStudent)            
         }
         catch (e) {
             res.status(500).json(e.message)        
@@ -42,8 +42,8 @@ class StudentsController{
     }
     async delete(req,res) {
         try {            
-            const task = await StudentsService.delete(req.params.id)
-            return res.json(task)            
+            const student = await StudentsService.delete(req.params.id)
+            return res.json(student)            
         }
         catch (e) {
             res.status(500).json(e.message)        

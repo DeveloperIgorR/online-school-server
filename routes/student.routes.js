@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const StudentsController= require('../controllers/students.controllers')
 
 /**
  * @swagger
@@ -15,7 +15,7 @@ const router = express.Router()
  *              description: Successfull response
  */
 
-// router.get('/',TasksController.getAll)
+router.get('/',StudentsController.getAll)
 
 /**
  * @swagger
@@ -37,7 +37,7 @@ const router = express.Router()
  *              description: Successfull response
  */
 
-// router.get('/:id',TasksController.getOne)
+router.get('/:id',StudentsController.getOne)
 
 /**
  * @swagger
@@ -103,7 +103,7 @@ const router = express.Router()
  *      - login
  *      - module
  */
-// router.post('/create',TasksController.create)
+router.post('/create',StudentsController.create)
 
 /**
  * @swagger
@@ -130,7 +130,7 @@ const router = express.Router()
  *          '200':
  *              description: Successfull response
  */
-// router.put('/update/:id',TasksController.update)
+router.put('/update/:id',StudentsController.update)
 
 /**
  * @swagger
@@ -151,6 +151,6 @@ const router = express.Router()
  *          '200':
  *              description: Successfull response
  */
-// router.delete('/delete/:id',TasksController.delete)
+router.delete('/delete/:id',StudentsController.delete)
 
 module.exports = router
