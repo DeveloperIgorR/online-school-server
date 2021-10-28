@@ -15,7 +15,7 @@ const router = express.Router()
  *              description: Successfull response
  */
 
-router.get('/',TasksController.getAll)
+// router.get('/',TasksController.getAll)
 
 /**
  * @swagger
@@ -37,7 +37,7 @@ router.get('/',TasksController.getAll)
  *              description: Successfull response
  */
 
-router.get('/:id',TasksController.getOne)
+// router.get('/:id',TasksController.getOne)
 
 /**
  * @swagger
@@ -77,11 +77,11 @@ router.get('/:id',TasksController.getOne)
  *         description: Student name
  *       Telegram:
  *         type: string
- *         example: @pokemon
+ *         example: #pokemon
  *         description: Students Telegram
  *       Instagram:
  *         type: string
- *         example: @pokemon
+ *         example: #pokemon
  *         description: Students Instagram
  *       date:
  *         type: string
@@ -103,7 +103,7 @@ router.get('/:id',TasksController.getOne)
  *      - login
  *      - module
  */
-router.post('/create',TasksController.create)
+// router.post('/create',TasksController.create)
 
 /**
  * @swagger
@@ -130,7 +130,7 @@ router.post('/create',TasksController.create)
  *          '200':
  *              description: Successfull response
  */
-router.put('/update/:id',TasksController.update)
+// router.put('/update/:id',TasksController.update)
 
 /**
  * @swagger
@@ -151,6 +151,6 @@ router.put('/update/:id',TasksController.update)
  *          '200':
  *              description: Successfull response
  */
-router.delete('/delete/:id',TasksController.delete)
+// router.delete('/delete/:id',TasksController.delete)
 
 module.exports = router
