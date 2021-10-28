@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 const mongoose = require('mongoose')
 
-const DB_URL = 'mongodb+srv://user:user@cluster0.1m428.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const DB_URL = 'mongodb+srv://user:user@cluster0.1m428.mongodb.net/students'
 
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
