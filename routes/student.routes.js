@@ -41,13 +41,35 @@ router.get('/:id',StudentsController.getOne)
 
 /**
  * @swagger
+ * /api/students/search:
+ *  get:
+ *      summary: Get student with name
+ *      tags:
+ *        - Students
+ *      consumes:
+ *        - application/json
+ *      parameters:
+ *        - in: path
+ *          name: name
+ *          required: true
+ *          description: name of student
+ *          type: string
+ *      responses:
+ *          '200':
+ *              description: Successfull response
+ */
+
+router.get('/search',StudentsController.getByName)
+
+/**
+ * @swagger
  *  /api/students/create:
  *    post:
  *      summary: Add new student
  *      description:
  *          Add new 'Students' object.
  *      tags:
- *          - Student
+ *          - Students
  *      parameters:
  *        - name: Student
  *          in: body
@@ -77,15 +99,15 @@ router.get('/:id',StudentsController.getOne)
  *         description: Student name
  *       Telegram:
  *         type: string
- *         example: #pokemon
+ *         example: pokemon
  *         description: Students Telegram
  *       Instagram:
  *         type: string
- *         example: #pokemon
+ *         example: pokemon
  *         description: Students Instagram
  *       date:
  *         type: string
- *         example: Modest
+ *         example: 10.21.2020
  *         description: date of registration
  *       login:
  *         type: string

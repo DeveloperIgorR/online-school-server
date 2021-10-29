@@ -28,6 +28,15 @@ class StudentsController{
             res.status(500).json(e.message)        
         }
     }
+    async getByName(req,res) {
+        try {           
+            const student = await StudentsService.getByName(req.body)
+            return res.json(student)            
+        }
+        catch (e) {
+            res.status(500).json(e.message)        
+        }
+    }
     async update(req,res) {
         try {           
             const updatedStudent = await StudentsService.update(

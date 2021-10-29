@@ -20,6 +20,14 @@ class StudentsService{
         return student         
     }
 
+    async getByName(name) {            
+        if(!name){
+            throw new Error('не указано Имя') 
+        }          
+        const student = await Students.findOne(name)
+        return student         
+    }
+
     async update(id,student) {        
         if(!id){
             throw new Error('не указан id') 
