@@ -18,15 +18,7 @@ class StudentsService{
         }          
         const student = await Students.findById(id)
         return student         
-    }
-
-    async getByName(name) {            
-        if(!name){
-            throw new Error('не указано Имя') 
-        }          
-        const student = await Students.find(name)
-        return student         
-    }
+    }    
 
     async update(id,student) {        
         if(!id){

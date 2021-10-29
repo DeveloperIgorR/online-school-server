@@ -1,4 +1,5 @@
 const StudentsService = require("../services/students.services")
+const Students = require("../Students")
 
 class StudentsController{
     async create(req,res) {
@@ -28,13 +29,15 @@ class StudentsController{
             res.status(500).json(e.message)        
         }
     }
-    async getByName(req,res) {
-        try {           
-            const student = await StudentsService.getByName(req.body)
+    async searchStudent(req,res) {
+        try { 
+            const searchName = req.query.search          
+            const student = await Students.find(req.params.id)
+            student = student.filter(file => file.name.includes(searchName))
             return res.json(student)            
         }
         catch (e) {
-            res.status(500).json(e.message)        
+            return res.status(400).json({message: 'Search error'})      
         }
     }
     async update(req,res) {
