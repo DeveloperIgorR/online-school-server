@@ -24,7 +24,7 @@ class StudentsService{
         if(!name){
             throw new Error('не указано Имя') 
         }          
-        const student = await Students.findOne(name)
+        const student = await Students.find(name)
         return student         
     }
 
