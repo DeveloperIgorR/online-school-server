@@ -61,6 +61,7 @@ router.get('/:id',StudentsController.getOne)
 
 router.get('/search/:query',StudentsController.searchStudent)
 
+
 /**
  * @swagger
  *  /api/students/create:
