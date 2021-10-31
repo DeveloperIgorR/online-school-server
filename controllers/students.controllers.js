@@ -30,10 +30,8 @@ class StudentsController{
         }
     }
     async searchStudent(req,res) {
-        try { 
-            const searchName = req.query.search          
-            const student = await Students.find(req.params.id)
-            student = student.filter(file => file.name.includes(searchName))
+        try {                      
+            const student = await StudentsService.searchStudent(req.query.search)           
             return res.json(student)            
         }
         catch (e) {
