@@ -31,7 +31,8 @@ class StudentsController{
     }
     async searchStudent(req,res) {
         try {                      
-            const student = await StudentsService.searchStudent(req.query)           
+            const student = await StudentsService.searchStudent(req.params.query)  
+            console.log(req.params.query)         
             return res.json(student)            
         }
         catch (e) {

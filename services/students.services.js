@@ -24,7 +24,7 @@ class StudentsService{
         if(!searchName){
             throw new Error('не указано имя') 
         }          
-        const student = await Students.find({'name': searchName})
+        const student = await Students.find({"name": {"$regex": searchName, "$options": "i"}})
         return student         
     }    
 

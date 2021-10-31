@@ -59,7 +59,7 @@ router.get('/:id',StudentsController.getOne)
  *              description: Successfull response
  */
 
-router.get('/search',StudentsController.searchStudent)
+router.get('/search/:query',StudentsController.searchStudent)
 
 /**
  * @swagger
