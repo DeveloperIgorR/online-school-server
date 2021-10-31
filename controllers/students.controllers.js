@@ -60,5 +60,4 @@ class StudentsController{
         }
     }
 }
-
 module.exports = new StudentsController
