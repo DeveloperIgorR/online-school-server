@@ -6,7 +6,7 @@ const Students = new mongoose.Schema({
     Instagram:{type: String, required: true},
     date:{type: String, required: true},
     login:{type: String, required: true},
-    module:{type: Array, required: false}
+    module:{type: Array, required: true}
 })
 
 
