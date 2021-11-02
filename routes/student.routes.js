@@ -114,7 +114,7 @@ router.get('/search/:query',StudentsController.searchStudent)
  *         type: string
  *         example: Modest
  *         description: Students mail 
- *       module:
+ *       modules:
  *         type: object
  *         example: ['React', 'JS', 'HTML/CSS']
  *         description: Students modules 
@@ -124,7 +124,7 @@ router.get('/search/:query',StudentsController.searchStudent)
  *      - Instagram
  *      - date
  *      - login
- *      - module
+ *      - modules
  */
 router.post('/create',StudentsController.create)
 
