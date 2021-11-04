@@ -23,10 +23,12 @@ class StudentsService{
     async searchStudent(searchName) {  
         console.log(searchName)          
         if(!searchName){
-            throw new Error('не указано имя') 
-        }          
+            const student = await Students.find() 
+            return student
+        } else {        
         const student = await Students.find({"name": {"$regex": searchName, "$options": "i"}})
-        return student         
+        return student 
+        }        
     }    
 
     async update(id,student) {        
