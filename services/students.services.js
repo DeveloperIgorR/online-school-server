@@ -20,7 +20,8 @@ class StudentsService{
         return student         
     }    
     
-    async searchStudent(searchName) {            
+    async searchStudent(searchName) {  
+        console.log(searchName)          
         if(!searchName){
             throw new Error('не указано имя') 
         }          
