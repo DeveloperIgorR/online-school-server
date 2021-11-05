@@ -46,4 +46,5 @@ const UsersController= require('../controllers/users.controllers')
  *      - email
  *      - password *      
  */
- router.post('/create',UsersController.create)
+
+router.post('/create',UsersController.create)
