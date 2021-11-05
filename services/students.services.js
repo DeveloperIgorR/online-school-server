@@ -20,9 +20,9 @@ class StudentsService{
         return student         
     }    
     
-    async searchStudent(searchName) {  
-        console.log(searchName)          
-        if(!searchName){
+    async searchStudent(searchName) {             
+        if(searchName.length === ''){
+            console.log(searchName)       
             const student = await Students.find() 
             return student
         } else {        
