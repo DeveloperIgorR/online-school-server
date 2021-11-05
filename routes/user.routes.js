@@ -41,10 +41,11 @@ const UsersController= require('../controllers/users.controllers')
  *       password:
  *         type: string
  *         example: pokemon
- *         description: Users password *      
+ *         description: Users password      
  *     required:
  *      - email
- *      - password *      
+ *      - password     
  */
-
 router.post('/create',UsersController.create)
+
+module.exports = router
