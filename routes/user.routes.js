@@ -8,12 +8,13 @@ const UsersController= require('../controllers/users.controllers')
  *    post:
  *      summary: Регистрация
  *      description:
- *          Add new 'User' object.
+ *          данные для логина
  *      tags:
- *          [Auth]
+ *          - Auth
  *      parameters:
- *       
- *          description: данные для регистрации
+ *        - name: User
+ *          in: body
+ *          description: task object
  *          required: true
  *          schema:
  *            $ref: '#/definitions/Users'
@@ -23,12 +24,12 @@ const UsersController= require('../controllers/users.controllers')
  *          schema:
  *              title: Return String
  *              type: string
- *              example: "User was created"
+ *              example: "User added succesfully"
  *        500:
  *          description: Error
  *          schema:
  *            type: string
- *            example: "Could not add Section"
+ *            example: "Could not add User"
  * definitions:
  *   Users:
  *     description: User object
@@ -51,11 +52,11 @@ router.post('/create',UsersController.create)
  * @swagger
  *  /api/users/auth:
  *    post:
- *      summary: Add new users
+ *      summary: Авторизация
  *      description:
  *          Add new 'Users' object.
  *      tags:
- *          - Users
+ *          - Auth
  *      parameters:
  *        - name: User
  *          in: body
@@ -65,7 +66,7 @@ router.post('/create',UsersController.create)
  *            $ref: '#/definitions/Users'
  *      responses:
  *        200:
- *          description: Successful response
+ *          description: Возвращает токен и данные о пользователе
  *          schema:
  *              title: Return String
  *              type: string
