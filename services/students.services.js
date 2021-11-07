@@ -21,11 +21,11 @@ class StudentsService{
     }    
     
     async searchStudent(searchName) {             
-        if(searchName.length === ''){
-            console.log(searchName)       
+        if(searchName === 'null'){           
             const student = await Students.find() 
             return student
-        } else {        
+        } else { 
+            console.log(searchName)  
         const student = await Students.find({"name": {"$regex": searchName, "$options": "i"}})
         return student 
         }        

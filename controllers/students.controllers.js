@@ -30,8 +30,7 @@ class StudentsController{
         }
     }
     async searchStudent(req,res) {
-        try {   
-            console.log(req.params.serchName)                   
+        try {                                
             const student = await StudentsService.searchStudent(req.params.serchName)                       
             return res.json(student)            
         }
