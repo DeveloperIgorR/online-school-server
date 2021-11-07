@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const UsersController= require('../controllers/users.controllers')
+const {check, validationResult} = require("express-validator")
 
 /**
  * @swagger
@@ -46,7 +47,12 @@ const UsersController= require('../controllers/users.controllers')
  *      - email
  *      - password     
  */
-router.post('/create',UsersController.create)
+router.post('/create',
+[
+    check('email', "Uncorrect email").isEmail(),
+    check('password', 'Password must be longer than 3 and shorter than 12').isLength({min:3, max:12})
+],
+UsersController.create)
 
 /**
  * @swagger
