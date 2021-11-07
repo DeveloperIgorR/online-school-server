@@ -1,9 +1,9 @@
 const UsersService = require('../services/users.services')
 
 class UsersController{
-    async registration(req,res) {
+    async registration(body) {
         try {            
-            const user = await UsersService.registration(req.body)
+            const user = await UsersService.registration(body)
             return res.json(user)            
         }
         catch (e) {
