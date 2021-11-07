@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const UsersController= require('../controllers/users.controllers')
-const {check, validationResult} = require("express-validator")
+const {check} = require("express-validator")
 
 /**
  * @swagger
