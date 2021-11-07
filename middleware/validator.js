@@ -8,13 +8,14 @@ class Validator {
         .normalizeEmail()
         .withMessage("Логин должен быть e-mail"),
       body("password")
-        .isStrongPassword({
-          minLength: 3,
-        //   minLowercase: 1,
-          // minNumbers: 1,
-        //   minUppercase: 1,
-        //   minSymbols: 1,
-        })
+       .isLength({ min: 3})
+        // .isStrongPassword({
+        //   minLength: 3,
+        // //   minLowercase: 1,
+        //   // minNumbers: 1,
+        // //   minUppercase: 1,
+        // //   minSymbols: 1,
+        // })
         .withMessage(
           "Пароль должен содержать минимум 3 символа"
         ),
