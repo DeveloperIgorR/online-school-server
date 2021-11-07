@@ -11,7 +11,7 @@ class Validator {
         .isStrongPassword({
           minLength: 3,
         //   minLowercase: 1,
-          minNumbers: 1,
+          // minNumbers: 1,
         //   minUppercase: 1,
         //   minSymbols: 1,
         })
