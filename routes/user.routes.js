@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const UsersController= require('../controllers/users.controllers')
-const {check} = require("express-validator")
+const { body, validationResult } = require("express-validator")
+const Validator = require('../middleware/validator')
 
 /**
  * @swagger
@@ -47,12 +48,23 @@ const {check} = require("express-validator")
  *      - email
  *      - password     
  */
-router.post('/create',
-[
-    check('email', "Uncorrect email").isEmail(),
-    check('password', 'Password must be longer than 3 and shorter than 12').isLength({min:3, max:12})
-],
-UsersController.create)
+router.post('/registration',Validator.validateLogin(),async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).send({
+        success: false,
+        errors: errors.array(),
+      });
+    } else {
+      try {
+        const newUser = await UsersController.registration(req.body);
+        res.send(newUser);
+      } catch (err) {
+        res.status(500).send(err);
+      }
+    }
+  }
+)
 
 /**
  * @swagger
@@ -98,6 +110,6 @@ UsersController.create)
  *      - email
  *      - password     
  */
-router.post('/auth',UsersController.create)
+router.post('/auth',UsersController.registration)
 
 module.exports = router
