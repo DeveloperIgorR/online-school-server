@@ -49,18 +49,19 @@ const Validator = require('../middleware/validator')
  *      - password     
  */
 router.post('/registration',Validator.validateLogin(),async (req, res) => {
-    const errors = validationResult(req);
+    const errors = validationResult(req)    
     if (!errors.isEmpty()) {
       return res.status(400).send({
         success: false,
         errors: errors.array(),
-      });
-    } else {
-      try {
-        const newUser = await UsersController.registration(req.body);
-        res.send(newUser);
-      } catch (err) {
-        res.status(500).send(err);
+      })
+    } else {      
+      try {        
+        const newUser = await UsersController.registration(req.body)
+        console.log('$$$$$')
+        return res.json(newUser)
+      } catch (e) {
+        res.status(500).json(e.message)
       }
     }
   }
