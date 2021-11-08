@@ -1,8 +1,7 @@
 const { body } = require("express-validator");
 
 class Validator {
-  validateLogin(request) {
-    console.log('----')
+  validateLogin(request) {    
     return [
       body("email")
         .isEmail()

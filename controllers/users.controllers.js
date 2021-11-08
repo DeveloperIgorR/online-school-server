@@ -4,7 +4,7 @@ class UsersController{
     async registration(body) {
         try {            
             const user = await UsersService.registration(body)
-            return res.json(user)            
+            return user          
         }
         catch (e) {
             res.status(500).json(e.message)        
