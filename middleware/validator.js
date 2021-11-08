@@ -2,6 +2,7 @@ const { body } = require("express-validator");
 
 class Validator {
   validateLogin(request) {
+    console.log('----')
     return [
       body("email")
         .isEmail()
@@ -21,7 +22,7 @@ class Validator {
         ),
     ];
   }
-  validateSN(requers) {
+  validateSocialNetwork(requers) {
     return [
       body("Instagram")
         .isLength({ min: 2, max: 16 })
