@@ -43,8 +43,19 @@ class UsersService {
         const validPassword = bcrypt.compare(
           password,
           user.password,
-          function(){
-            
+          function(err, result){
+            if(result){
+              const token = generateAceessToken(
+                email,
+                user._id
+              )
+              res({
+                message: "Success",
+                token
+              })
+            } else {
+              rej(loginFailed)
+            }
           }
         )
       }
