@@ -20,6 +20,15 @@ class UsersService {
       res.send({ message: "Server error" })
     }
   }
+
+  async login(body){
+    return new Promise(async(res,rej) => {
+      const { email, password } = body
+      const user = await Users.findOne({ email: email })
+      
+    })
+  }
+
 }
 
 module.exports = new UsersService
