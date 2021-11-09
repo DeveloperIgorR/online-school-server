@@ -1,6 +1,17 @@
 const Users = require('../Users')
 const bcrypt = require("bcrypt")
 const salt = 5
+const generateAceessToken = (email, id) => {
+  const payload = {
+    id,
+    email    
+  }
+  return jwt.sign(payload, process.env.SECRET_PHRASE);
+};
+const loginFailed = {  
+  message: "Error: введены неверные данные",
+  token: null,
+}
 
 class UsersService {
 
@@ -26,13 +37,23 @@ class UsersService {
       return new Promise(async(res,rej) => {
       const { email, password } = body
       const user = await Users.findOne({ email: email })
-
+      if(!user){
+        rej(loginFailed)
+      } else {
+        const validPassword = bcrypt.compare(
+          password,
+          user.password,
+          function(){
+            
+          }
+        )
+      }
     })
     }catch (e) {
       throw new Error("Server error")
     }    
   }
-  
+
 }
 
 module.exports = new UsersService()
