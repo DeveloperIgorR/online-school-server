@@ -1,5 +1,6 @@
 const Users = require('../Users')
 const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
 const salt = 5
 const generateAceessToken = (email, id) => {
   const payload = {
