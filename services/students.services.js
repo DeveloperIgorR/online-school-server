@@ -48,4 +48,4 @@ class StudentsService{
     }
 }
 
-module.exports = new StudentsService
+module.exports = new StudentsService()

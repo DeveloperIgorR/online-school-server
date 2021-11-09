@@ -22,13 +22,17 @@ class UsersService {
   }
 
   async login(body){
-    return new Promise(async(res,rej) => {
+    try {
+      return new Promise(async(res,rej) => {
       const { email, password } = body
       const user = await Users.findOne({ email: email })
-      
-    })
-  }
 
+    })
+    }catch (e) {
+      throw new Error("Server error")
+    }    
+  }
+  
 }
 
-module.exports = new UsersService
+module.exports = new UsersService()

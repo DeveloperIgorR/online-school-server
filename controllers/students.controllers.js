@@ -60,4 +60,4 @@ class StudentsController{
         }
     }
 }
-module.exports = new StudentsController
+module.exports = new StudentsController()
