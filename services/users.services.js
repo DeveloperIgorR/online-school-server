@@ -51,6 +51,7 @@ class UsersService {
                 user._id
               )
               res({
+                user,
                 message: "Success",
                 token
               })

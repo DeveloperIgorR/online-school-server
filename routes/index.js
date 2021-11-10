@@ -53,8 +53,8 @@ router.use('/users', usersRoutes)
 
  router.post("/auth", async (req, res) => {
     try {
-      let token = await UsersController.login(req.body);
-      res.send(token);
+      let data = await UsersController.login(req.body);
+      res.send(data);
     } catch (err) {
       res.send(err);
     }
