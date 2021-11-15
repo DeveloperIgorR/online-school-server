@@ -60,7 +60,7 @@ router.get('/:id',authMiddleware, StudentsController.getOne)
  *              description: Successfull response
  */
 
-router.get('/search/:serchName',StudentsController.searchStudent)
+router.get('/search/:serchName',authMiddleware, StudentsController.searchStudent)
 
 
 /**
