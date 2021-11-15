@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const authMiddleware = require('../middleware/auth.middleware')
 const StudentsController= require('../controllers/students.controllers')
 
 /**
@@ -15,7 +16,7 @@ const StudentsController= require('../controllers/students.controllers')
  *              description: Successfull response
  */
 
-router.get('/',StudentsController.getAll)
+router.get('/', authMiddleware, StudentsController.getAll)
 
 /**
  * @swagger
