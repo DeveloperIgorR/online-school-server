@@ -127,7 +127,7 @@ router.get('/search/:serchName',authMiddleware, StudentsController.searchStudent
  *      - login
  *      - modules
  */
-router.post('/create',StudentsController.create)
+router.post('/create',authMiddleware, StudentsController.create)
 
 /**
  * @swagger
