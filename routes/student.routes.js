@@ -38,7 +38,7 @@ router.get('/', authMiddleware, StudentsController.getAll)
  *              description: Successfull response
  */
 
-router.get('/:id',StudentsController.getOne)
+router.get('/:id',authMiddleware, StudentsController.getOne)
 
 /**
  * @swagger
