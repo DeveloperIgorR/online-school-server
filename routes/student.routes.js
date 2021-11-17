@@ -154,7 +154,7 @@ router.post('/create',authMiddleware, StudentsController.create)
  *          '200':
  *              description: Successfull response
  */
-router.put('/update/:id',StudentsController.update)
+router.put('/update/:id',authMiddleware, StudentsController.update)
 
 /**
  * @swagger
@@ -175,6 +175,6 @@ router.put('/update/:id',StudentsController.update)
  *          '200':
  *              description: Successfull response
  */
-router.delete('/delete/:id',StudentsController.delete)
+router.delete('/delete/:id',authMiddleware, StudentsController.delete)
 
 module.exports = router
