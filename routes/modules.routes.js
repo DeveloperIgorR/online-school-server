@@ -51,37 +51,17 @@ router.get('/', authMiddleware, ModulesController.getAll)
  *   Modules:
  *     description: Student object
  *     properties:
- *       name:
+ *       title:
  *         type: string
- *         example: Modest
- *         description: Student name
- *       Telegram:
+ *         example: React
+ *         description: Module name
+ *       color:
  *         type: string
- *         example: pokemon
- *         description: Students Telegram
- *       Instagram:
- *         type: string
- *         example: pokemon
- *         description: Students Instagram
- *       date:
- *         type: string
- *         example: 10.21.2020
- *         description: date of registration
- *       login:
- *         type: string
- *         example: Modest
- *         description: Students mail 
- *       modules:
- *         type: object
- *         example: ['React', 'JS', 'HTML/CSS']
- *         description: Students modules 
+ *         example: red
+ *         description: Module color        
  *     required:
- *      - name
- *      - Telegram
- *      - Instagram
- *      - date
- *      - login
- *      - modules
+ *      - title
+ *      - color 
  */
 router.post('/create',authMiddleware, ModulesController.create)
 
