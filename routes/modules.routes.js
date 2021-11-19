@@ -5,12 +5,12 @@ const ModulesController= require('../controllers/modules.controllers')
 
 /**
  * @swagger
- * /api/students:
+ * /api/modules:
  *  get:
- *      summary: Get all students
- *      description: Returns all students from DB
+ *      summary: Get all modules
+ *      description: Returns all modules from DB
  *      tags:
- *          - Students
+ *          - Modules
  *      responses:
  *          '200':
  *              description: Successfull response
@@ -21,20 +21,20 @@ router.get('/', authMiddleware, ModulesController.getAll)
 
 /**
  * @swagger
- *  /api/students/create:
+ *  /api/modules/create:
  *    post:
- *      summary: Add new student
+ *      summary: Add new module
  *      description:
- *          Add new 'Students' object.
+ *          Add new 'Modules' object.
  *      tags:
- *          - Students
+ *          - Modules
  *      parameters:
- *        - name: Student
+ *        - name: Module
  *          in: body
  *          description: task object
  *          required: true
  *          schema:
- *            $ref: '#/definitions/Students'
+ *            $ref: '#/definitions/Modules'
  *      responses:
  *        200:
  *          description: Successful response
@@ -48,7 +48,7 @@ router.get('/', authMiddleware, ModulesController.getAll)
  *            type: string
  *            example: "Could not add Section"
  * definitions:
- *   Students:
+ *   Modules:
  *     description: Student object
  *     properties:
  *       name:
