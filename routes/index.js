@@ -3,9 +3,11 @@ const UsersController= require('../controllers/users.controllers')
 const router = express.Router()
 const studentsRoutes = require('./student.routes')
 const usersRoutes = require('./user.routes')
+const modulesRoutes = require('./modules.routes')
 
 router.use('/students', studentsRoutes)
 router.use('/users', usersRoutes)
+router.use('/modules',modulesRoutes)
 /**
  * @swagger
  *  /api/auth:
