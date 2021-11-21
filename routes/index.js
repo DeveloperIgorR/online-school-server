@@ -8,6 +8,7 @@ const modulesRoutes = require('./modules.routes')
 router.use('/students', studentsRoutes)
 router.use('/users', usersRoutes)
 router.use('/modules',modulesRoutes)
+
 /**
  * @swagger
  *  /api/auth:
