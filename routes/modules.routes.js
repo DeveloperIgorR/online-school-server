@@ -18,7 +18,6 @@ const ModulesController= require('../controllers/modules.controllers')
 
 router.get('/', authMiddleware, ModulesController.getAll)
 
-
 /**
  * @swagger
  *  /api/modules/create:
